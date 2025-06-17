@@ -44,27 +44,8 @@ If your project uses config files (YAML/JSON) for sources, rules, or thresholds,
 ### Example: basic command-line usage
 
 ```bash
-python run_audit.py --sources sources.yml --output results/
+./deploy_audit.sh
 ```
-
-### Within Python scripts
-
-```python
-from audit_ai import AuditEngine
-
-engine = AuditEngine(config="config.yml")
-results = engine.run_all()
-results.summary()
-results.to_excel("report.xlsx")
-```
-
-## 📋 Output
-
-Example of output files or results:
-
-- `report.xlsx`
-- JSON summary of discrepancies
-- Dashboard screenshot or link
 
 ## 🛠️ Architecture Overview
 
@@ -73,37 +54,3 @@ Example of output files or results:
 │ Ingestion  │ → │ Parsing      │ → │ Comparison   │ → │ Reporting   │
 └────────────┘   └──────────────┘   └──────────────┘   └─────────────┘
 ```
-
-## ✅ Compliance Rules
-
-Document which rules/checks are applied and where they’re defined:
-
-- Four-eyes rule  
-- Reconciling totals across sources  
-- Flagging omitted line items  
-
-## 🧪 Tests
-
-Unit and integration tests included:
-
-```bash
-pytest tests/
-```
-
-## 📚 Examples
-
-Include links or thumbnails of sample reports, dashboards, or notebooks illustrating full workflows.
-
-## 👥 Contributing
-
-1. Fork the project  
-2. Create a feature branch (`git checkout -b my-feature`)  
-3. Commit your changes (`git commit -m "Add feature"`)  
-4. Push to your fork (`git push origin my-feature`)  
-5. Open a Pull Request  
-
-Please follow the [Code of Conduct](CODE_OF_CONDUCT.md) and adhere to [style guidelines].
-
-## 📄 License
-
-Licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
